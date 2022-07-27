@@ -41,6 +41,22 @@ def index():
     createFile(file_path,file_name,output,location)
     
     return('index_page')
+# Individual Accounts
+
+@app.route('/individual',methods=['GET','POST'])
+def index():
+    # today=str(date.today())
+    data = request.get_json()
+    load = data[json_file]
+    output = pd.json_normalize(load)
+    folder(str(date.today()))
+    file_name ='NON-TL_data '+str(date.today())+'.csv'
+    location ='./'+str(date.today())+'/'+file_name
+    file_path= os.path.isfile(os.path.join(location))
+    createFile(file_path,file_name,output,location)
+    
+    return('NON-TL_Data')
+
 
 # click rate app
 @app.route('/click',methods=['GET','POST'])
@@ -117,4 +133,4 @@ def heldMessages():
     return ('held_page')
     
 if __name__=="__main__":
-    app.run(debug=True,port=8181)
+    app.run(debug=True,host='0.0.0.0',port='8181')
