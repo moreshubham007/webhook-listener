@@ -16,7 +16,9 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}  
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: docker build csharp
+    - name: docker build 
       run: |
         docker build . -t shubhammore/webhook:latest
-
+    - name: docker push
+      run: |
+        docker push shubhammore/webhook:latest
