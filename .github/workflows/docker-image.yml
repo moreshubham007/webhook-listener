@@ -22,9 +22,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push
-        uses: docker/build-push-action@v3
-        run: docker build shubhammore/webhook:latest
-        with:
-          push: true
-          tags: shubhammore/webhook:latest
+        name: docker build
+        run: |
+          docker build . -t shubhammore/webhook:latest
