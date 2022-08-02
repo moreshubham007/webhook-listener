@@ -1,6 +1,7 @@
 FROM python:3.8
+LABEL maintainer="shubhammore007@outlook.com"
 WORKDIR /app
-COPY .  .
+COPY ./source  .
 RUN pip install -r requirements.txt
 EXPOSE 8181
-CMD ["python3","server.py"]
+CMD ["python3","app.py"]
