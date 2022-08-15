@@ -21,7 +21,7 @@ def createFile(file_path,file_name,output,location):
     return True
     
 def folder(today):
-    dir = os.path.join("./data/",today)
+    dir = os.path.join("/data/",today)
     if not os.path.exists(dir):
          os.mkdir(dir)
          print('######### New Folder Created: '+today)
@@ -51,7 +51,7 @@ def individual():
     output = pd.json_normalize(load)
     folder(str(date.today()))
     file_name ='NON-TL_data '+str(date.today())+'.csv'
-    location ='./data/'+str(date.today())+'/'+file_name
+    location ='/data/'+str(date.today())+'/'+file_name
     file_path= os.path.isfile(os.path.join(location))
     createFile(file_path,file_name,output,location)
     
@@ -68,7 +68,7 @@ def click():
     output = pd.json_normalize(load)
     file_name ='click_data '+str(date.today())+'.csv'
     folder(str(date.today()))
-    location ='./data/'+str(date.today())+'/'+file_name
+    location ='/data/'+str(date.today())+'/'+file_name
     file_path= os.path.isfile(os.path.join(location))
     createFile(file_path,file_name,output,location)
     return('click page')
@@ -83,7 +83,7 @@ def open():
     output = pd.json_normalize(load)
     file_name ='open_data '+str(date.today())+'.csv'
     folder(str(date.today()))
-    location ='./data/'+str(date.today())+'/'+file_name
+    location ='/data/'+str(date.today())+'/'+file_name
     file_path= os.path.isfile(os.path.join(location))
     createFile(file_path,file_name,output,location)
     return('open page')
@@ -98,7 +98,7 @@ def allEvents():
     output = pd.json_normalize(load)
     file_name ='all_data '+str(date.today())+'.csv'
     folder(str(date.today()))
-    location ='./data/'+str(date.today())+'/'+file_name
+    location ='/data/'+str(date.today())+'/'+file_name
     file_path= os.path.isfile(os.path.join(location))
     createFile(file_path,file_name,output,location)
     return('all_event_page')
@@ -113,7 +113,7 @@ def deliveryFaild():
     output = pd.json_normalize(load)
     file_name ='delivery_fail_data '+str(date.today())+'.csv'
     folder(today=str(date.today()))
-    location ='./data/'+str(date.today())+'/'+file_name
+    location ='/data/'+str(date.today())+'/'+file_name
     file_path= os.path.isfile(os.path.join(location))
     createFile(file_path,file_name,output,location)
     return('delivery_failed_page')
@@ -127,7 +127,7 @@ def heldMessages():
     output = pd.json_normalize(load)
     file_name ='held_data '+str(date.today())+'.csv'
     folder(today=str(date.today()))
-    location ='./data/'+str(date.today())+'/'+file_name
+    location ='/data/'+str(date.today())+'/'+file_name
     file_path= os.path.isfile(os.path.join(location))
     createFile(file_path,file_name,output,location)
     return ('held_page')
