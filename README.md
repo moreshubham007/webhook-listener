@@ -24,7 +24,7 @@ install docker image:
 docker run -d \
  --name webhook-listner \
  -p 127.0.0.1:9000:8181 \
- -v webhook:data \
+ -v webhook_data:/data/  \
  shubhammore/webhook:latest
 
 ```
